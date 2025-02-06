@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "5pjTenWJjqbDmu1BM43gSDh6E5o9r35ugyM0wREAkE8=",
+  "Source": "MauiApp1.Api",
+  "BasePath": "_content/MauiApp1.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
