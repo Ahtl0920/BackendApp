@@ -153,6 +153,7 @@ D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.Api.AssemblyInf
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.Api.csproj.CoreCompileInputs.cache
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.Api.MvcApplicationPartsAssemblyInfo.cs
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.Api.MvcApplicationPartsAssemblyInfo.cache
+D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.Api.sourcelink.json
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\scopedcss\bundle\MauiApp1.Api.styles.css
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets.build.json
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets.development.json
