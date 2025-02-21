@@ -164,7 +164,6 @@ D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets\msbuild.
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MauiApp1.Api.props
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MauiApp1.Api.props
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets.pack.json
-D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.33EFBB17.Up2Date
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\MauiApp1.Api.dll
 D:\Desarollo\MauiApp1.Api\MauiApp1.Api\obj\Debug\net8.0\refint\MauiApp1.Api.dll

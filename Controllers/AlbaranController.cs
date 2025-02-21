@@ -18,7 +18,7 @@ namespace BackendApi.Controllers
 
         //  Obtener albarán por serie y número de documento (ORIGEN)
         [HttpGet("origen")]
-        public async Task<IActionResult> GetAlbaranOrigen(string serie, int numDoc)
+        public async Task<IActionResult> GetAlbaranOrigen([FromQuery] string serie, [FromQuery] decimal numDoc)
         {
             var albaran = await _albaranService.GetAlbaranOrigenAsync(serie, numDoc);
             if (albaran == null)
@@ -29,7 +29,7 @@ namespace BackendApi.Controllers
 
         //  Obtener albarán por serie y número de documento (DESTINO)
         [HttpGet("destino")]
-        public async Task<IActionResult> GetAlbaranDestino(string serie, int numDoc)
+        public async Task<IActionResult> GetAlbaranDestino(string serie, decimal numDoc)
         {
             var albaran = await _albaranService.GetAlbaranDestinoAsync(serie, numDoc);
             if (albaran == null)

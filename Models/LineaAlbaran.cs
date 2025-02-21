@@ -1,26 +1,61 @@
-﻿namespace MauiApp1.Api.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MauiApp1.Api.Models
 {
+    [Table("DETALLEALBARAN")] // mapeo correcto de la tabla
     public class LineaAlbaran
     {
-        public int Id { get; set; } // IDLIN: Identificador único de la línea.
-        public int AlbaranId { get; set; } // IDALBV: Relación con Albarán.
+        [Key]
+        [Column("IDLIN")]  // IDLIN: Identificador único de la línea
+        public int Id { get; set; }
+
+        [Column("IDALBV")]  // IDALBV: Relación con Albarán
+        public int AlbaranId { get; set; }
 
         //  Datos del Artículo
-        public string CodigoArticulo { get; set; } = string.Empty; // CODART
-        public int Unidades { get; set; } // UNIDADES
-        public string Estado { get; set; } = string.Empty; // EXT0_ESTADO
-        public string Marca { get; set; } = string.Empty; // EXT0_MARCA
-        public string Modelo { get; set; } = string.Empty; // EXT0_MODELO
-        public string Referencia { get; set; } = string.Empty; // EXT0_REFERENCIA
-        public int Bultos { get; set; } // EXT0_BULTOS
-        public decimal Largo { get; set; } // EXT0_LARGO
-        public decimal Ancho { get; set; } // EXT0_ANCHO
-        public decimal Alto { get; set; } // EXT0_ALTO
-        public decimal Peso { get; set; } // EXT0_PESO
-        public string Contenido { get; set; } = string.Empty; // EXT0_CONTENIDO
-        public string NumeroSerie { get; set; } = string.Empty; // NUMSERIE
+        [Column("CODART")]
+        public string CodigoArticulo { get; set; } = string.Empty;
 
-        //  Relación con Albarán
+        [Column("UNIDADES")]
+        public int Unidades { get; set; }
+
+        [Column("EXT0_ESTADO")]
+        public string Estado { get; set; } = string.Empty;
+
+        [Column("EXT0_MARCA")]
+        public string Marca { get; set; } = string.Empty;
+
+        [Column("EXT0_MODELO")]
+        public string Modelo { get; set; } = string.Empty;
+
+        [Column("EXT0_REFERENCIA")]
+        public string Referencia { get; set; } = string.Empty;
+
+        [Column("EXT0_BULTOS")]
+        public int Bultos { get; set; }
+
+        [Column("EXT0_LARGO")]
+        public decimal Largo { get; set; }
+
+        [Column("EXT0_ANCHO")]
+        public decimal Ancho { get; set; }
+
+        [Column("EXT0_ALTO")]
+        public decimal Alto { get; set; }
+
+        [Column("EXT0_PESO")]
+        public decimal Peso { get; set; }
+
+        [Column("EXT0_CONTENIDO")]
+        public string Contenido { get; set; } = string.Empty;
+
+        [Column("NUMSERIE")]
+        public string NumeroSerie { get; set; } = string.Empty;
+
+        //  Relación con Albarán ( Anula temporalmente si no está lista en la BD)
+        [ForeignKey("AlbaranId")]
+        [NotMapped]  // Si aún no existe en la base de datos, coméntar cuando sea necesario
         public Albaran? Albaran { get; set; }
     }
 }

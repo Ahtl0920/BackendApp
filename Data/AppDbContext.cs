@@ -9,14 +9,16 @@ namespace MauiApp1.Api.Data
 
         public DbSet<Albaran> Albaranes { get; set; }
         public DbSet<LineaAlbaran> LineasAlbaranes { get; set; }
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Mercancia> Mercancias { get; set; }
-        public DbSet<Repartidor> Repartidores { get; set; }
+        //public DbSet<Cliente> Clientes { get; set; }
+        //public DbSet<Mercancia> Mercancias { get; set; }
+        //public DbSet<Repartidor> Repartidores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             // Si hay relaciones o configuraciones especiales de tablas, agrégar aqui
+
+            modelBuilder.Entity<Albaran>().ToTable("CABEALBV");
         }
     }
 }

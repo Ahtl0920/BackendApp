@@ -7,7 +7,7 @@ using MauiApp1.Api.Models;
 
 namespace MauiApp1.Api.Services
 {
-    public class ClienteService : IClienteService
+   /* public class ClienteService : IClienteService
     {
         private readonly AppDbContext _context;
 
@@ -76,5 +76,5 @@ namespace MauiApp1.Api.Services
             await _context.SaveChangesAsync();
             return true;
         }
-    }
+    }*/
 }

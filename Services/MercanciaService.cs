@@ -7,7 +7,7 @@ using MauiApp1.Api.Models;
 
 namespace MauiApp1.Api.Services
 {
-    public class MercanciaService : IMercanciaService
+   /* public class MercanciaService : IMercanciaService
     {
         private readonly AppDbContext _context;
 
@@ -48,7 +48,7 @@ namespace MauiApp1.Api.Services
             var existingMercancia = await _context.Mercancias.FindAsync(id);
             if (existingMercancia == null) return false;
 
-            // Actualiza cada campo sin perder nada
+            // Actualiza cada campo
             existingMercancia.Descripcion = updatedMercancia.Descripcion;
             existingMercancia.Cantidad = updatedMercancia.Cantidad;
             existingMercancia.CodigoArticulo = updatedMercancia.CodigoArticulo;
@@ -78,5 +78,5 @@ namespace MauiApp1.Api.Services
             await _context.SaveChangesAsync();
             return true;
         }
-    }
+    }*/
 }

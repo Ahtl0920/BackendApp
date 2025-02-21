@@ -16,12 +16,12 @@ namespace MauiApp1.Api.Services
             _context = context;
         }
 
-        public async Task<Albaran?> GetAlbaranOrigenAsync(string serie, int numDoc)
+        public async Task<Albaran?> GetAlbaranOrigenAsync(string serie, decimal numDoc)
         {
             return await _context.Albaranes.FirstOrDefaultAsync(a => a.Serie == serie && a.NumDoc == numDoc);
         }
 
-        public async Task<Albaran?> GetAlbaranDestinoAsync(string serie, int numDoc)
+        public async Task<Albaran?> GetAlbaranDestinoAsync(string serie, decimal numDoc)
         {
             return await _context.Albaranes.FirstOrDefaultAsync(a => a.Serie == serie && a.NumDoc == numDoc);
         }

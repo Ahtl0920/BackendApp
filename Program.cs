@@ -4,19 +4,42 @@ using MauiApp1.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// ?? Verificar que la cadena de conexión se está leyendo correctamente
+string connectionString = builder.Configuration.GetConnectionString("A3ERP") ?? "";
+Console.WriteLine($"Cadena de conexión: {connectionString}");
+
+// ?? Validar que la cadena de conexión no está vacía
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    throw new InvalidOperationException(" Error: La cadena de conexión a la base de datos no está configurada.");
+}
+
 // Add services to the container.
 builder.Services.AddControllers();
 
+// ?? Configurar Entity Framework con la cadena de conexión correcta
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    try
+    {
+        options.UseSqlServer(connectionString);
+        Console.WriteLine(" Conectado correctamente a la base de datos.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($" Error al conectar con SQL Server: {ex.Message}");
+        throw;
+    }
+});
 
+// ?? Inyección de Dependencias
 builder.Services.AddScoped<IAlbaranService, AlbaranService>();
 builder.Services.AddScoped<ILineaAlbaranService, LineaAlbaranService>();
-builder.Services.AddScoped<IClienteService, ClienteService>();
-builder.Services.AddScoped<IMercanciaService, MercanciaService>();
-builder.Services.AddScoped<IRepartidorService, RepartidorService>();
+//builder.Services.AddScoped<IClienteService, ClienteService>();
+//builder.Services.AddScoped<IMercanciaService, MercanciaService>();
+//builder.Services.AddScoped<IRepartidorService, RepartidorService>();
 
-// ?? CONFIGURACIÓN DE CORS
+// ?? Configuración de CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -25,13 +48,13 @@ builder.Services.AddCors(options =>
                        .AllowAnyHeader());
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// ?? Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ?? Configurar el pipeline de solicitudes HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -40,7 +63,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// ?? HABILITAR CORS ANTES DE AUTHORIZATION
+// ?? Habilitar CORS antes de Authorization
 app.UseCors("AllowAll");
 
 app.UseAuthorization();
